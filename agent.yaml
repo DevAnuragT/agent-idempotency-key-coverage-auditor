@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: idempotency-key-coverage-auditor
+version: 0.1.0
+description: "Checks retryable API operations for key coverage, retention duration, and key scope."
+skills:
+  - idempotency-key-coverage-auditor-skill
+tools:
+  - audit-idempotency-key-coverage-auditor
+tags:
+  - api-reliability
+  - evidence-driven

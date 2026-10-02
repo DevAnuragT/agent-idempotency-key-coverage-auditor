@@ -1,0 +1,5 @@
+{
+  "retryable_operations_without_key": 0,
+  "key_retention_hours": 48,
+  "key_scope": "tenant+operation"
+}

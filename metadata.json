@@ -1,0 +1,35 @@
+{
+  "slug": "idempotency-key-coverage-auditor",
+  "title": "Idempotency Key Coverage Auditor",
+  "category": "api-reliability",
+  "description": "Checks retryable API operations for key coverage, retention duration, and key scope.",
+  "decision": "Checks retryable API operations for key coverage, retention duration, and key scope.",
+  "limitations": "Uses caller-declared evidence only; does not verify external systems, legal requirements, or real-world truth. Human review remains required.",
+  "inputs": "A JSON object containing the documented fields. Numeric thresholds are deterministic and visible in agent.py.",
+  "good": {
+    "retryable_operations_without_key": 0,
+    "key_retention_hours": 48,
+    "key_scope": "tenant+operation"
+  },
+  "bad": {},
+  "rules": [
+    [
+      "retryable_operations_without_key",
+      "retryable operations without key",
+      "max",
+      0
+    ],
+    [
+      "key_retention_hours",
+      "key retention hours",
+      "min",
+      24
+    ],
+    [
+      "key_scope",
+      "idempotency key scope",
+      "required",
+      null
+    ]
+  ]
+}
